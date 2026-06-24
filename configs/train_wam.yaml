@@ -1,0 +1,26 @@
+seed: 13
+run_dir: runs/train_wam
+
+data:
+  num_train_scenes: 4096
+  num_val_scenes: 512
+  history_steps: 8
+  future_steps: 12
+  num_agents: 12
+  num_candidates: 128
+  dt: 0.2
+
+model:
+  hidden_dim: 256
+
+train:
+  batch_size: 64
+  epochs: 25
+  learning_rate: 0.0005
+  device: auto
+
+planner:
+  collision_weight: 8.0
+  offroad_weight: 3.0
+  comfort_weight: 0.1
+  progress_weight: 1.0

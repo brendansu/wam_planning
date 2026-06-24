@@ -1,0 +1,27 @@
+seed: 17
+run_dir: runs/eval_planner
+
+data:
+  num_train_scenes: 256
+  num_val_scenes: 128
+  history_steps: 8
+  future_steps: 12
+  num_agents: 12
+  num_candidates: 128
+  dt: 0.2
+
+model:
+  hidden_dim: 256
+  checkpoint: runs/train_wam/checkpoints/best.pt
+
+train:
+  batch_size: 32
+  epochs: 1
+  learning_rate: 0.001
+  device: auto
+
+planner:
+  collision_weight: 8.0
+  offroad_weight: 3.0
+  comfort_weight: 0.1
+  progress_weight: 1.0
