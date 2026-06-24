@@ -1,5 +1,6 @@
 seed: 13
 run_dir: runs/train_wam
+milestone_status: future_milestone_3
 
 data:
   num_train_scenes: 4096

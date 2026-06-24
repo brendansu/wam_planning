@@ -1,5 +1,6 @@
 seed: 17
 run_dir: runs/eval_planner
+milestone_status: future_milestone_4
 
 data:
   num_train_scenes: 256

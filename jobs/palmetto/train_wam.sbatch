@@ -1,11 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=wam-train
+#SBATCH --job-name=wam-smoke
 #SBATCH --output=runs/slurm-%j.out
 #SBATCH --error=runs/slurm-%j.err
-#SBATCH --time=04:00:00
-#SBATCH --mem=32G
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=4
+#SBATCH --time=00:20:00
+#SBATCH --mem=8G
+#SBATCH --cpus-per-task=2
 
 set -euo pipefail
 
@@ -17,4 +16,5 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 
-python scripts/train.py --config configs/train_wam.yaml
+python scripts/train.py --config configs/local_smoke.yaml
+python scripts/visualize_rollout.py --config configs/local_smoke.yaml
